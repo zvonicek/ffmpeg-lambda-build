@@ -195,14 +195,6 @@ CPPFLAGS="-I$PREFIX/include" make
 make install
 cd -
 
-git clone git://git.ffmpeg.org/rtmpdump
-cd rtmpdump
-sed -i'' "s|prefix=.*|prefix=$PREFIX|" Makefile
-sed -i'' "s|prefix=.*|prefix=$PREFIX|" librtmp/Makefile
-CPPFLAGS="-I$PREFIX/include" XLDFLAGS="-L$PREFIX/lib" make
-make install
-cd -
-
 git clone --depth=1 git://github.com/sekrit-twc/zimg
 cd zimg
 ./autogen.sh
@@ -350,14 +342,6 @@ cd ffmpeg
 # opencl
 # opengl
 make
-make install
-cd -
-
-svn checkout svn://svn.mplayerhq.hu/mplayer/trunk mplayer
-cd mplayer
-cp -r $PREFIX/include/libavutil/ .
-LD_LIBRARY_PATH=$PREFIX/lib ./configure --prefix=$PREFIX --disable-ffmpeg_a --extra-cflags="-I$PREFIX/include" --extra-ldflags="-L$PREFIX/lib"
-LD_LIBRARY_PATH=$PREFIX/lib make
 make install
 cd -
 
