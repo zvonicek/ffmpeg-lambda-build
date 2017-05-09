@@ -24,7 +24,7 @@ if [ -d "sbin" ]; then
 fi
 
 mkdir keepbin
-mv bin/ffmpeg bin/ffprobe bin/rtmpdump bin/mplayer keepbin/
+mv bin/ffmpeg bin/ffprobe keepbin/
 rm -rf etc include var misc man lib64 doc share private openssl.cnf certs sbin bin \
     lib/*.a lib/*.la lib/openjpeg-1.5 lib/pkgconfig lib/python2.7
 mv keepbin bin
