@@ -283,8 +283,6 @@ cd ffmpeg
 	--enable-libopencore-amrwb --enable-libopencore-amrnb \
 	--enable-libsoxr --enable-libvpx --enable-libwebp \
 	--enable-libx264 --enable-libx265 --enable-libzimg \
-	--enable-libxvid --enable-openssl  --enable-librtmp \
-	--enable-libvorbis --enable-libopus --enable-libtheora \
 	--enable-libspeex --enable-libvidstab --enable-libvo-amrwbenc \
     --enable-libopenjpeg --enable-libfribidi --enable-libfreetype \
     --enable-libfontconfig --enable-libass --enable-libcaca
