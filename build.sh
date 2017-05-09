@@ -67,14 +67,6 @@ make
 make install
 cd -
 
-svn checkout http://svn.xvid.org/trunk/xvidcore --username anonymous --password '' --non-interactive
-cd xvidcore/build/generic
-./bootstrap.sh
-./configure --prefix=$PREFIX
-make
-make install
-cd -
-
 hg clone https://bitbucket.org/multicoreware/x265
 cd x265/build
 cmake -DCMAKE_INSTALL_PREFIX:PATH=$PREFIX -DCMAKE_ASM_YASM_FLAGS='-DARCH_X86_64=1 -f elf64' ../source
@@ -188,13 +180,6 @@ make
 make install
 cd -
 
-git clone --depth=1 -b OpenSSL_1_0_2-stable git://github.com/openssl/openssl
-cd openssl
-./config  --prefix=$PREFIX --openssldir=$PREFIX shared zlib-dynamic
-CPPFLAGS="-I$PREFIX/include" make
-make install
-cd -
-
 git clone --depth=1 git://github.com/sekrit-twc/zimg
 cd zimg
 ./autogen.sh
@@ -241,32 +226,8 @@ make
 make install
 cd -
 
-git clone https://git.xiph.org/vorbis.git
-cd vorbis
-./autogen.sh
-./configure --prefix=$PREFIX
-make
-make install
-cd -
-
-git clone https://git.xiph.org/theora.git
-cd theora
-./autogen.sh
-LDFLAGS="-L$PREFIX/lib" CPPFLAGS="-I$PREFIX/include" ./configure --prefix=$PREFIX
-make
-make install
-cd -
-
 git clone https://git.xiph.org/speex.git
 cd speex
-./autogen.sh
-./configure --prefix=$PREFIX
-make
-make install
-cd -
-
-git clone https://git.xiph.org/opus.git
-cd opus
 ./autogen.sh
 ./configure --prefix=$PREFIX
 make
